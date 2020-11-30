@@ -1,0 +1,32 @@
+plugins {
+	id 'org.springframework.boot' version '2.4.0'
+	id 'io.spring.dependency-management' version '1.0.10.RELEASE'
+	id 'java'
+}
+
+group = 'com.turntabl'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+	implementation 'org.springframework.boot:spring-boot-starter-data-redis-reactive'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'io.projectreactor:reactor-test'
+	// https://mvnrepository.com/artifact/redis.clients/jedis
+	compile group: 'redis.clients', name: 'jedis', version: '3.3.0'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.4.0'
+	// https://mvnrepository.com/artifact/org.springframework.data/spring-data-redis
+	compile group: 'org.springframework.data', name: 'spring-data-redis', version: '2.4.1'
+	// https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-starter-data-redis
+	compile group: 'org.springframework.boot', name: 'spring-boot-starter-data-redis', version: '2.4.0'
+}
+
+test {
+	useJUnitPlatform()
+}
